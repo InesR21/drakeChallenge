@@ -45,7 +45,7 @@ const ProductAddRemove = ({product}: ProductAddRemoveProps) => {
   };
   return (
     <TouchableWithoutFeedback onPress={handlePressView}>
-      <View className="flex flex-row justify-center w-full px-1 mb-1 ">
+      <View className="flex flex-row justify-center w-full h-6 px-1 mb-1 ">
         <View className=" px-2 flex flex-row justify-between items-center bg-[#e1e5e9] shadow-lg rounded-md basis-[70%] h-full">
           <TouchableOpacity
             disabled={!items.length}
