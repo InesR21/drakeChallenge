@@ -7,11 +7,13 @@ import {Product} from './types';
 import {store} from './app/store';
 import {Provider} from 'react-redux';
 import BasketScreen from './screens/BasketScreen';
+import PreparingOrderScreen from './screens/PreparingOrderScreen';
 
 export type RootStackParamList = {
   Home: undefined;
   Details: {product: Product};
   Basket: undefined;
+  PreparingOrderScreen: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -32,6 +34,13 @@ export default function App() {
             component={BasketScreen}
             options={{
               presentation: 'modal',
+            }}
+          />
+          <Stack.Screen
+            name="PreparingOrderScreen"
+            component={PreparingOrderScreen}
+            options={{
+              presentation: 'fullScreenModal',
             }}
           />
         </Stack.Navigator>
