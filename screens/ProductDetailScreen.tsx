@@ -12,7 +12,6 @@ import {Product} from '../types';
 import Header from '../components/Header';
 import ProductType from '../components/ProductType';
 import ProductRelease from '../components/ProductRelease';
-import BasketIcon from '../components/BasketIcon';
 import ProductAddRemove from '../components/ProductAddRemove';
 
 interface ProductDetailScreenParams {
@@ -96,8 +95,6 @@ const ProductDetailScreen = () => {
           </View>
         </View>
       </View>
-
-      <BasketIcon />
     </ScrollView>
   );
 };

@@ -11,6 +11,7 @@ import PreparingOrderScreen from './screens/PreparingOrderScreen';
 import 'react-native-reanimated';
 import 'react-native-gesture-handler';
 import DeliveryScreen from './screens/DeliveryScreen';
+import MiniCart from './screens/MiniCart';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -18,6 +19,7 @@ export type RootStackParamList = {
   Basket: undefined;
   PreparingOrderScreen: undefined;
   Delivery: undefined;
+  MiniCart: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -52,6 +54,13 @@ export default function App() {
             component={DeliveryScreen}
             options={{
               presentation: 'fullScreenModal',
+            }}
+          />
+          <Stack.Screen
+            name="MiniCart"
+            component={MiniCart}
+            options={{
+              presentation: 'modal',
             }}
           />
         </Stack.Navigator>

@@ -17,6 +17,7 @@ import {
 import {Product} from '../types';
 import {XCircleIcon} from 'react-native-heroicons/mini';
 import {formatCurrency} from '../utils';
+import ResumeCart from '../components/ResumeCart';
 
 const BasketScreen = () => {
   const [gropedItems, setGropedItems] = useState<any[]>([]);
@@ -85,32 +86,11 @@ const BasketScreen = () => {
             </View>
           ))}
         </ScrollView>
-        <View className="p-5 mt-5 space-y-4 bg-white ">
-          <View className="flex-row justify-between">
-            <Text className="text-gray-400">SubTotal</Text>
-            <Text className="text-gray-400">{formatCurrency(basketTotal)}</Text>
-          </View>
-
-          <View className="flex-row justify-between">
-            <Text className="text-gray-400">Delivery Fee</Text>
-            <Text className="text-gray-400">{formatCurrency(1000)}</Text>
-          </View>
-
-          <View className="flex-row justify-between">
-            <Text>Order Total</Text>
-            <Text className="font-extrabold">
-              {formatCurrency(basketTotal + 1000)}
-            </Text>
-          </View>
-
-          <TouchableOpacity
-            onPress={() => navigation.navigate('PreparingOrderScreen')}
-            className="rounded-lg bg-[#2d3748] p-4">
-            <Text className="text-lg font-bold text-center text-white">
-              Place Order
-            </Text>
-          </TouchableOpacity>
-        </View>
+        <ResumeCart
+          basketTotal={basketTotal}
+          navigateTo="PreparingOrderScreen"
+          navigateTitle="Place Order"
+        />
       </View>
     </SafeAreaView>
   );
