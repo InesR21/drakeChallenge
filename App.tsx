@@ -8,12 +8,16 @@ import {store} from './app/store';
 import {Provider} from 'react-redux';
 import BasketScreen from './screens/BasketScreen';
 import PreparingOrderScreen from './screens/PreparingOrderScreen';
+import 'react-native-reanimated';
+import 'react-native-gesture-handler';
+import DeliveryScreen from './screens/DeliveryScreen';
 
 export type RootStackParamList = {
   Home: undefined;
   Details: {product: Product};
   Basket: undefined;
   PreparingOrderScreen: undefined;
+  Delivery: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -39,6 +43,13 @@ export default function App() {
           <Stack.Screen
             name="PreparingOrderScreen"
             component={PreparingOrderScreen}
+            options={{
+              presentation: 'fullScreenModal',
+            }}
+          />
+          <Stack.Screen
+            name="Delivery"
+            component={DeliveryScreen}
             options={{
               presentation: 'fullScreenModal',
             }}

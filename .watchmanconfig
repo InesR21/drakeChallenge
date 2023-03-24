@@ -1,1 +1,7 @@
-{}
+{
+  "watchman": {
+    "max_queued_bytes": 50000000,
+    "max_pending": 5000,
+    "max_concurrent": 2000
+  }
+}

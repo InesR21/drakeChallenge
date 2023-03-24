@@ -91,7 +91,7 @@ const ProductDetailScreen = () => {
             <ProductType type={product.type} />
           </View>
 
-          <View className="w-full h-full mt-10 shadow-md align-center">
+          <View className="w-full h-full mt-10 align-center">
             <ProductAddRemove product={product} />
           </View>
         </View>

@@ -1,20 +1,22 @@
 import React from 'react';
-import {View, Text, SafeAreaView} from 'react-native';
+import {View, SafeAreaView, StatusBar} from 'react-native';
 import {useProducts} from '../hooks/useProducts';
 import ProductList from '../components/ProductList';
 import Header from '../components/Header';
 import BasketIcon from '../components/BasketIcon';
+import Loading from '../components/Loading';
 
 const HomeScreen = () => {
   const {products, loading} = useProducts();
 
   if (loading) {
     return (
-      <SafeAreaView className="mx-4 mt-6">
-        <View>
-          <Text>Loading...</Text>
+      <>
+        <StatusBar hidden />
+        <View className="flex-1 items-center justify-center bg-[#2d3748]">
+          <Loading size={100} />
         </View>
-      </SafeAreaView>
+      </>
     );
   }
   return (
